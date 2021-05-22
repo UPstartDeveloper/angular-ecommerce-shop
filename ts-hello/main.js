@@ -1,6 +1,8 @@
-/** Lesson 1: Typescript is just a superset of JS */
-var log = function (message) {
-    // all JS code can be run using the TS compiler
-    console.log(message);
-};
-log("Hello World!");
+// the enum type: see how it is implemented in JS?
+var Color;
+(function (Color) {
+    Color[Color["RED"] = 0] = "RED";
+    Color[Color["GREEN"] = 1] = "GREEN";
+    Color[Color["BLUE"] = 2] = "BLUE";
+})(Color || (Color = {}));
+;
