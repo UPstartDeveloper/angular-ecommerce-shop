@@ -41,3 +41,32 @@ enum Color {
     GREEN = 1,
     BLUE = 2
 };
+
+/** Lesson 4: Type Assertions: a way to explictly tell TS the type of a variable */
+
+let msg; // currently an "any" type
+
+msg = "abc";
+
+// let endsWithC = msg.endsWith("c");  // here, msg type is ambiguous (i.e. you don't get IntelliSense)
+
+let endsWithC = (<string>msg).endsWith("c");  // here, the compiler knows msg is a str
+// let lessPopularWay = (msg as string).endsWith("c");  
+
+/** Lesson 5: Interfaces */
+
+interface Point {
+    // this construct is not a class - i.e. 
+    // we don't use it to instantiate objs, 
+    // BUT this allows us to give custom type annotations to 
+    // different objects we may pass around between functions/classes/etc. in our code
+    // -- allowing us to communicate effectively! 
+    // ++ it is also reusable, which helps make code DRY
+    x: number,
+    y: number
+}
+
+// example:
+let drawPoint = (point: Point) => {
+    // some drawing func goes here...
+}
