@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
+import { CourseService } from "./course.service";
 
 @Component({
     selector: 'courses',
     template: `
-        <h2>{{ "Title : " + getTitle() }}</h2>
+        <h2>{{ "Title: " + getTitle() }}</h2>
 
         <ul>
             <li *ngFor="let course of courses">
@@ -15,9 +16,12 @@ import { Component } from "@angular/core";
 })
 export class CoursesComponent {
     title = "List of Courses";
-    courses = [
-        "course1", "course2", "course3"
-    ]
+    courses;
+
+    constructor() {
+        let service = new CourseService();
+        this.courses = service.getCourses();
+    }
 
     getTitle = () => {
         return this.title;
