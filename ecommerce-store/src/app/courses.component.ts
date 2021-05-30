@@ -4,26 +4,14 @@ import { CourseService } from "./course.service";
 @Component({
     selector: 'courses',
     template: `
-        <h2>{{ "Title: " + getTitle() }}</h2>
-
-        <ul>
-            <li *ngFor="let course of courses">
-                {{ course }}
-            </li>
-        <ul>
-        
-        `
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+    `
 })
 export class CoursesComponent {
-    title = "List of Courses";
-    courses;
 
-    constructor() {
-        let service = new CourseService();
-        this.courses = service.getCourses();
-    }
+    email = "hello@zainraza.me";  // just an initial value
 
-    getTitle = () => {
-        return this.title;
+    onKeyUp( ) {
+        console.log(this.email);
     }
 }
