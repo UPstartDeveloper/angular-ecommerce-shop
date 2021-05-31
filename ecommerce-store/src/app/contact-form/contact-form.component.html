@@ -7,7 +7,8 @@
             </label>
             <input ngModel type="text" name="firstName" 
                    id="firstName" class="form-control"
-                   [(ngModel)]="currentVal" (change)="log()">
+                   #firstName="ngModel" 
+                   (change)="log(firstName)">
         </div>
         <!-- Comment Field -->
         <div class="form-group">

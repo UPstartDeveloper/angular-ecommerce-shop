@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent {
-  currentVal = "";
 
-  log() {
-    console.log(this.currentVal);
+  log(currentVal: any) {
+    console.log(currentVal);
   }
 
 }
