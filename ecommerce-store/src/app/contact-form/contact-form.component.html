@@ -8,7 +8,18 @@
             <input ngModel type="text" name="firstName" 
                    id="firstName" class="form-control"
                    #firstName="ngModel" 
-                   (change)="log(firstName)">
+                   (change)="log(firstName)" 
+                   required minlength="5" pattern="banana">
+            <!-- Validation errors -->
+            <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+                <div *ngIf="firstName.control.errors?.required">First name is required.</div>
+                <div *ngIf="firstName.control.errors?.minlength">
+                    First name should be at least {{ firstName.control.errors?.minlength.requiredLength }} characters.
+                </div>
+                <div *ngIf="firstName.control.errors?.pattern">
+                    First name does not fit the pattern.
+                </div>
+            </div>
         </div>
         <!-- Comment Field -->
         <div class="form-group">
