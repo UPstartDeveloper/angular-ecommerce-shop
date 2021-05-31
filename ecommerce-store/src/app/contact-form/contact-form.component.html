@@ -11,8 +11,11 @@
                    (change)="log(firstName)" 
                    required minlength="5" pattern="banana">
             <!-- Validation errors -->
-            <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
-                <div *ngIf="firstName.control.errors?.required">First name is required.</div>
+            <div class="alert alert-danger" 
+                 *ngIf="firstName.touched && !firstName.valid">
+                <div *ngIf="firstName.control.errors?.required">
+                    First name is required.
+                </div>
                 <div *ngIf="firstName.control.errors?.minlength">
                     First name should be at least {{ firstName.control.errors?.minlength.requiredLength }} characters.
                 </div>
