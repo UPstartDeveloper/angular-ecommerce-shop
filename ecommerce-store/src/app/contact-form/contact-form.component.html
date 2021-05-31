@@ -5,7 +5,9 @@
             <label for="firstName">
                 <strong>First Name</strong>
             </label>
-            <input type="text" name="" id="firstName" class="form-control">
+            <input ngModel type="text" name="firstName" 
+                   id="firstName" class="form-control"
+                   [(ngModel)]="currentVal" (change)="log()">
         </div>
         <!-- Comment Field -->
         <div class="form-group">
@@ -14,7 +16,10 @@
                     <strong>Comment</strong>
                 </label>
             </div>
-            <textarea style="min-width: 100%" id="comment" cols="30" rows="10"></textarea>
+            <textarea style="min-width: 100%" id="comment" 
+                      cols="30" rows="10"
+                      ngModel name="comment">
+            </textarea>
         </div>
         <!-- Submit Page -->
         <button class="btn btn-primary mt-2">Submit</button>
