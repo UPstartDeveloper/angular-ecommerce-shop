@@ -23,3 +23,15 @@
   <mat-radio-button value="1">Male</mat-radio-button>
   <mat-radio-button value="2">Other Genders</mat-radio-button>
 </mat-radio-group>
+
+<!-- Adding Dropdown Lists from Angular Material -->
+<h2>Basic mat-select</h2>
+<mat-form-field appearance="fill">
+   <mat-label>Favorite food</mat-label>  <!-- Can either use this, and/or pre-select an element-->
+    <mat-select [(ngModel)]="color">
+        <mat-option *ngFor="let color of colors" [value]="color.name">
+              {{ color.name }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
