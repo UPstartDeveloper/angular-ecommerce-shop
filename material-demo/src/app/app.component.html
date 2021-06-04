@@ -1,5 +1,15 @@
-<!-- Adding a Checkbox from Angular Material -->
-<mat-checkbox>
-  <!-- label the box HERE -->
-  Subscribe to newsletter
+<!-- Adding a Checkbox from Angular Material, w/ common Properties -->
+<mat-checkbox
+    #showDetails
+    [checked]="isChecked"
+    (change)="onChange($event)"
+    >
+    <!-- label the box HERE -->
+    Show Details?
 </mat-checkbox> 
+
+
+<!-- More Details, if the Component above is checked -->
+<div *ngIf="showDetails.checked">
+  SOME DETAILS...
+</div>
