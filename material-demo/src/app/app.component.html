@@ -35,3 +35,32 @@
     </mat-select>
 </mat-form-field>
 
+<!-- Adding Input Fields from Angular Material -->
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Favorite food</mat-label>
+    <!-- note that placeholder takes a backseat to value, when both are present,
+         as well, when none of them are there, the label will go in the text box,
+         and then move above when the user starts entering a value
+    -->
+    <input ngModel
+           matInput placeholder="e.g. Pizza"
+           name="favoriteFood" type="text"
+           aria-placeholder="e.g. Pizza"
+           (change)="onChange(favoriteFood)"
+           #favoriteFood="ngModel"
+           required value="Sushi">
+    <!-- even more info for the user -->
+    <mat-hint>Type the name of your favorite food.</mat-hint> 
+    <!-- optionally add suffixes and prefixes to whatever input the user gives -->
+    <span matPrefix>Italian-</span>
+    <span matSuffix>made with ♥️</span>
+    <!-- Adding Errors to the Form, using Angular Material -->
+    <mat-error
+      *ngIf="favoriteFood.invalid && favoriteFood.control.errors?.required"
+      >
+      You must enter your favorite food.
+    </mat-error>
+  </mat-form-field>
+</form>
+

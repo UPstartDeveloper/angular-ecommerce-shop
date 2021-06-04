@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 // Add checkboxes + radio buttons from Angular Material
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+// Add Inputs from Angular Material
+import { MatInputModule } from '@angular/material/input';
 // Add drop-down lists from Angular Material
 import { MatSelectModule } from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     MatCheckboxModule,
+    MatInputModule,
     MatRadioModule,
     MatSelectModule
   ],
