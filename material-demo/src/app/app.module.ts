@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // import support for Angular animations in the browser:
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-// Add checkboxes from Angular Material
+// Add checkboxes + radio buttons from Angular Material
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -15,7 +16,8 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

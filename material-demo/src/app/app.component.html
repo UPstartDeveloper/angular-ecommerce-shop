@@ -11,5 +11,15 @@
 
 <!-- More Details, if the Component above is checked -->
 <div *ngIf="showDetails.checked">
-  SOME DETAILS...
+    SOME DETAILS...
 </div>
+
+<br><br>
+
+<!-- Adding Radio Buttons from Angular Material -->
+<mat-radio-group 
+    aria-label="Select The Gender That You Most Closely Identify With"
+    value="1">  <!-- this attr helps us pre-select the radio button w/ matching value-->
+  <mat-radio-button value="1">Male</mat-radio-button>
+  <mat-radio-button value="2">Other Genders</mat-radio-button>
+</mat-radio-group>
